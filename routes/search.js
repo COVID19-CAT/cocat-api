@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var position = require("../ndata");
+var axios = require("axios");
 
 router.post("/keyword", function (req, res, next) {
   const { spot } = req.body;
@@ -16,6 +17,7 @@ router.post("/keyword", function (req, res, next) {
       const Tlng = target.x;
       const Tlat = target.y;
       let re = [];
+
       position.forEach((n) => {
         let latlngreplace = n.latlng.replace(/(\s*)/g, "");
         let sp = latlngreplace.split(",");
@@ -26,6 +28,7 @@ router.post("/keyword", function (req, res, next) {
           re.push(n);
         }
       });
+
       res.json({ Qweq: re });
     })
     .catch(function (error) {
@@ -88,3 +91,5 @@ function deg2rad(deg) {
 function rad2deg(rad) {
   return (rad * 180) / Math.PI;
 }
+
+module.exports = router;
