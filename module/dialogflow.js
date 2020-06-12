@@ -1,9 +1,8 @@
 module.exports = {
-
   async detectTextIntent(
     projectId = 'covid19cat',
     sessionId = '123456',
-    query = '안녕',
+    query,
     languageCode = 'ko') {
 
     const dialogflow = require('dialogflow');
@@ -28,9 +27,6 @@ module.exports = {
 
 
     const responses = await sessionClient.detectIntent(request);
-    console.log(responses);
-
-    console.log(responses[0]);
 
     return responses[0];
   }
