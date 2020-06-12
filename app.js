@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const indexRouter = require("./routes/index");
-const searchRouter = require("./routes/search");
+// const searchRouter = require("./routes/search");
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
-app.use("/search", searchRouter);
+// app.use("/search", searchRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
