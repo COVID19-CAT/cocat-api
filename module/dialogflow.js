@@ -1,22 +1,37 @@
-const dialogflow = require('dialogflow');
-const uuid = require('uuid');
+module.exports = {
 
-module.exports = class Df {
-  constructor(
-    projectId = 'covid19-amqyme',
-    keyFile = '../config/neon-camera-280107-6c7c96d29505.json'
-  ) {
-    this.projectId = projectId;
-    this.keyFile = keyFile;
+  async detectTextIntent(
+    projectId = 'covid19cat',
+    sessionId = '123456',
+    query = '안녕',
+    languageCode = 'ko') {
 
-    const privateKey = keyFile['private_key'];
-    const clientKey = keyFile['client_email'];
-    const config = {
-      private_key: privateKey,
-      client_email: clientKey,
+    const dialogflow = require('dialogflow');
+
+    const sessionClient = new dialogflow.SessionsClient();
+
+
+    const sessionPath = sessionClient.sessionPath(
+      projectId,
+      sessionId
+    );
+
+    const request = {
+      session: sessionPath,
+      queryInput: {
+        text: {
+          text: query,
+          languageCode: languageCode,
+        },
+      },
     };
+
+
+    const responses = await sessionClient.detectIntent(request);
+    console.log(responses);
+
+    console.log(responses[0]);
+
+    return responses[0];
   }
-
-
-
 }
