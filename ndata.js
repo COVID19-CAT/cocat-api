@@ -18758,3 +18758,5 @@ var position = [
     latlng: "37.47761313699697, 127.0443405140179",
   },
 ];
+
+module.exports = position;
