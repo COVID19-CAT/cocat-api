@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var position = require("../ndata");
+
 router.post("/keyword", function (req, res, next) {
   const { spot } = req.body;
   axios({
@@ -14,6 +15,35 @@ router.post("/keyword", function (req, res, next) {
       const target = result[0];
       const Tlng = target.x;
       const Tlat = target.y;
+      let re = [];
+      position.forEach((n) => {
+        let latlngreplace = n.latlng.replace(/(\s*)/g, "");
+        let sp = latlngreplace.split(",");
+        const lat = sp[0];
+        const lng = sp[1];
+        const rr = distance(Tlat, Tlng, lat, lng);
+        if (rr <= 30) {
+          re.push(n);
+        }
+      });
+      res.json({ Qweq: re });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+});
+
+router.post("/position", (req, res, next) => {
+  const { lat, lng } = req.body;
+  axios({
+    method: "get",
+    url: `https://dapi.kakao.com/v2/local/search/keyword.json`,
+    params: { query: spot },
+    headers: { Authorization: "KakaoAK 7b98b237d9751707379a96b7fc1ba3e7" },
+  })
+    .then(function (response) {
+      const Tlng = lat;
+      const Tlat = lng;
       let re = [];
       position.forEach((n) => {
         let latlngreplace = n.latlng.replace(/(\s*)/g, "");
