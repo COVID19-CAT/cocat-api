@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-
+var position = require("../ndata");
 router.post("/keyword", function (req, res, next) {
   const { spot } = req.body;
   axios({
