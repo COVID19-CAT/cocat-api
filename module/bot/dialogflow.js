@@ -7,7 +7,7 @@ module.exports = {
 
     const dialogflow = require('dialogflow');
 
-    const sessionClient = new dialogflow.SessionsClient();
+    const sessionClient = new dialogflow.SessionsClient({ keyFilename: __dirname + '/dialogflowKey.json' });
 
 
     const sessionPath = sessionClient.sessionPath(
