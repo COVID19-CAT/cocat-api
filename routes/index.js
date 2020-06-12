@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const config = require('../config');
+const search = require('../module/search');
 const { statusCode, authUtil, responseMessage } = require('../module/util');
 
 router.post('/cheese', async (req, res, next) => {
@@ -21,8 +22,12 @@ router.post('/cheese', async (req, res, next) => {
     switch (intent) {
       case 'welcome': result = response.queryResult.fulfillmentText;
         break;
+      case 'creator': result = response.queryResult.fulfillmentText;
+        break;
 
-      case 'find-place': result = 'temp';
+      case 'find-place':
+        const spot = response.queryResult.parameters.fields.place.stringValue;
+        result = search.findPlaceBySpot(spot);
         break;
 
       default: result = {};
