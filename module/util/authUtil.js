@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   successTrue: (message, data) => {
     return { success: true, message: message, data: data };
   },

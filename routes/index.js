@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 const config = require('../config');
+const { statusCode, authUtil, responseMessage } = require('../module/util');
 
-/* GET home page. */
 router.post('/cheese', async (req, res, next) => {
   const { query } = req.body;
 
-  const bot = require('../module/dialogflow');
+  const bot = require('../module/bot/dialogflow');
 
   const projectId = config.projectId;
   const sessionId = config.sessionId;
@@ -16,14 +16,27 @@ router.post('/cheese', async (req, res, next) => {
   try {
     const response = await bot.detectTextIntent(projectId, sessionId, query, languageCode);
     const intent = response.queryResult.intent.displayName;
+
+    let result;
     switch (intent) {
-      case 'welcome':
-        res.status(200).json({ re: response.queryResult.fulfillmentText });
+      case 'welcome': result = response.queryResult.fulfillmentText;
+        break;
+
+      case 'find-place': result = 'temp';
+        break;
+
+      default: result = {};
+        break;
     }
-    res.status(200).json(response);
+    res
+      .status(statusCode.OK)
+      .json(authUtil.successTrue(responseMessage.OK, result));
 
   } catch (e) {
     console.error(e);
+    res
+      .status(statusCode.INTERNAL_SERVER_ERROR)
+      .json(authUtil.successFalse(responseMessage.INTERNAL_SERVER_ERROR));
   }
 });
 
