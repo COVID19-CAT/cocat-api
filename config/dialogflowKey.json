@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "neon-camera-280107",
+  "private_key_id": "6c7c96d2950521140f7cbb27bcc922b1737c84fc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDz0+y1DHfTUwB/\nX6jUP/IBmhtI7F5ogWASLkoNoj3Ki3n7iOHbetG1ystyzqIcxs3sTq1t7cVcd8pn\n56r38Ix4lhKvzvsR2rivbknPfLKcgjKfOc7LUst+HKRW3uxftFceIqNmAsgmRmfs\nomm1QKMPVA17O0xOeQuWJNKxdEfBdzBV00jWOLj/Qz1ezU/X7oDSIYfyjB2mWPOD\n4ssFqrT5moCHxjACBt+lHPhIEQYDM5BE6nKKrEakOp+mx8iQYwzJosyQcvcq0D1R\nVlHOpfDr1gy576VqUx+3xcreNmSJPtjzTTBQZSH0uHcuB3jcZL0NkTmMFscW2/xQ\nglWfMfcbAgMBAAECggEANwHLd/jNG5axGQs6qk+WyDe9ChGRJuBxDQj2WecNK6GV\nrmJuGba2kt2iUk89kWJkWHhTdeZbTQYVWqWQE4loF1g79P+r8pY2bhVif3WxUc+p\nnfRLq+EM2XGavaJjDyA/OyQzWrMr9j6R+XeWg3aGktGyjOeOynFSZNf/1FrYSVOq\njTUhtkDR4C9cEDPduxF3oI2a12NepD/PVE3hN3qyHkQjS4MZtZZ2bB7JWSg31m+G\n7EFSUvGdCuy2GQOLsmt1F4E4e09ljP+WKkv9b65Fkx66I2nquYvw8oJXCVaE6+2F\ntsAcUP6nGCa+CK2pDIFis/kkIMQzJZ0+bnMNgHLIGQKBgQD9mrrle1DMef+y9gR7\nFVGJTdTGasDej6FLx+gaDUYEN6vHA0PYmP43zhKwtCLF916Ct7/RBkThDCM/rhmg\nNawxi2rsvVY1SR0yBo65dg6R5F3sFd6tIECTNJyyzSkrhi0C8OGKx+CdezwEiaK9\njhCQH0DlvTktQos1GEKpMq/8LwKBgQD2IY19Y9TJ7OgLcnb3uFMf002vJGcu9TkB\nIP2OeQ+7xTw3WcTuNe9KCQ8jD9Nt+J+ur+nG3FjaRQBqPm5A6EuMJkQz5XfaaPF6\nhlKe4SQnX1qrpFwUS/cu0FzJZL3zandb72CQX2mpHbzSOuqvHQsRkTbsvAELvzgj\nbTTaQ9Ac1QKBgGcxDbmQ6vi476W3W21l6E6RX/H4wFAPa5d1WWk4W3Qd3wTUvEen\nQVIdxRcnxTp+hHN2J1P7VA2qrbEcu4qoLE/gpfp8tFZsULfpWSv38MfGf70vzPLv\nO7dqYhSTTJxMNYaL04pv+GK8IVjLVHADHZQ3U2XoEBrth81r+Lv2Rwu7AoGAfUiA\n69V4B7yWNNVz5w4lCasV/NOLziQ2evOe/Pl0X8C6sPX5vsMnZUkNMmyo025dYZ7b\nYUTh2WCMIIhcuJ9FbTZBOyVPh5YpbJOY1JSHQZ9Q2NOVpyMv091tjXnBEnkb/mjv\nfy2B6/peFai1sqMW8j83dPMRmTghTC8XWw5vjW0CgYBFz4VVVIwlK7dHGAnZnsRR\nFJUlGuDz9b5/iWfG8OpE9fWJQYdZdctWlyr1gCutFcsx14lekXygyx2EnieDfzdo\nPEm5cuF4fgC0uUJDiY4c3O1ZqhJzF4PaJ9QN2fCREvty8WyIBDsmu1vELihdv87O\n/66BN9wPf7cLX5KdDTod1Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "covid19@neon-camera-280107.iam.gserviceaccount.com",
+  "client_id": "106795691256987046670",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/covid19%40neon-camera-280107.iam.gserviceaccount.com"
+}
