@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const indexRouter = require("./routes/index");
-// const searchRouter = require("./routes/search");
+const searchRouter = require("./routes/search");
 
 const app = express();
 

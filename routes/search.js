@@ -1,10 +1,11 @@
-var express = require("express");
-var router = express.Router();
-var position = require("../ndata");
-var axios = require("axios");
+const express = require("express");
+const router = express.Router();
+const position = require("../ndata");
+const axios = require("axios");
 
-router.post("/keyword", function (req, res, next) {
-  const { spot } = req.body;
+router.post("/position", (req, res, next) => {
+  const { lat, lng } = req.body;
+
   axios({
     method: "get",
     url: `https://dapi.kakao.com/v2/local/search/keyword.json`,
@@ -12,10 +13,8 @@ router.post("/keyword", function (req, res, next) {
     headers: { Authorization: "KakaoAK 7b98b237d9751707379a96b7fc1ba3e7" },
   })
     .then(function (response) {
-      const result = response.data.documents;
-      const target = result[0];
-      const Tlng = target.x;
-      const Tlat = target.y;
+      const Tlng = lat;
+      const Tlat = lng;
       let re = [];
 
       position.forEach((n) => {
@@ -54,7 +53,7 @@ router.post("/position", (req, res, next) => {
         const lat = sp[0];
         const lng = sp[1];
         const rr = distance(Tlat, Tlng, lat, lng);
-        if (rr <= 30) {
+        if (rr <= 10) {
           re.push(n);
         }
       });
