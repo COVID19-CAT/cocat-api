@@ -18759,4 +18759,8 @@ var position = [
   },
 ];
 
+<<<<<<< HEAD
 module.exports = position;
+=======
+module.exports = position;
+>>>>>>> 518746c9900d4666fd8d0d79279a0c74f9fcfbf0
