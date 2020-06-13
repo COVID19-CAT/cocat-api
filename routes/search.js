@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express");
 const router = express.Router();
 const position = require("../ndata");
@@ -65,9 +64,6 @@ router.post("/position", (req, res, next) => {
     });
 });
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 function distance(lat1, lon1, lat2, lon2, unit = "kilometer") {
   theta = lon1 - lon2;
   dist =
@@ -96,4 +92,3 @@ function rad2deg(rad) {
 }
 
 module.exports = router;
->>>>>>> 518746c9900d4666fd8d0d79279a0c74f9fcfbf0
